@@ -1,0 +1,109 @@
+settings = {
+    orientation = {
+        default = 'portrait',
+        supported = {'portrait', 'portraitUpsideDown'}
+    },
+    plugins = {
+        ['facebook'] = {publisherId = 'com.coronalabs'},
+        ['CoronaProvider.native.popup.social'] = {publisherId = 'com.coronalabs'},
+        ['plugin.playhaven'] = {publisherId = 'com.playhaven'},
+        ['plugin.GameThrivePushNotifications'] = {publisherId = 'com.gamethrive'},
+        ['CoronaProvider.ads.inmobi'] = {publisherId = 'com.coronalabs'},
+        ['CoronaProvider.gameNetwork.google'] = {publisherId = 'com.coronalabs', supportedPlatforms = {android = true}},
+        ['plugin.google.play.services'] = {publisherId = 'com.coronalabs'},
+        ['CoronaProvider.gameNetwork.apple'] = {publisherId = 'com.coronalabs', supportedPlatforms = {iphone = true, ['iphone-sim'] = true}}
+    },
+    android = {
+        installLocation = 'auto',
+        usesPermissions = {
+            'com.android.vending.BILLING',
+            'android.permission.INTERNET',
+            'android.permission.READ_PHONE_STATE',
+            'android.permission.WRITE_EXTERNAL_STORAGE',
+            'android.permission.ACCESS_COARSE_LOCATION',
+            'android.permission.ACCESS_WIFI_STATE',
+            'android.permission.ACCESS_NETWORK_STATE'
+        },
+        usesFeatures = {
+            {name = 'android.hardware.location.network', required = false}
+        },
+        googlePlayGamesAppId = '438477322105'
+    },
+    iphone = {
+        plist = {
+            CFBundleIconFile = 'Icon.png',
+            CFBundleIconFiles = {
+                'Icon.png',
+                'Icon@2x.png',
+                'Icon-Small-40.png',
+                'Icon-Small-40@2x.png',
+                'Icon-60.png',
+                'Icon-60@2x.png',
+                'Icon-60@3x.png',
+                'Icon-72.png',
+                'Icon-72@2x.png',
+                'Icon-76.png',
+                'Icon-76@2x.png',
+                'Icon-Small-50.png',
+                'Icon-Small-50@2x.png',
+                'Icon-Small.png',
+                'Icon-Small@2x.png'
+            },
+            UILaunchImages = {
+                {    --iPhone 4 Portrait
+                    UILaunchImageMinimumOSVersion = '7.0',
+                    UILaunchImageName = 'Default',
+                    UILaunchImageOrientation = 'Portrait',
+                    UILaunchImageSize = '{320, 480}'
+                },{  --iPhone 5 Portrait
+                    UILaunchImageMinimumOSVersion = '7.0',
+                    UILaunchImageName = 'Default-568h',
+                    UILaunchImageOrientation = 'Portrait',
+                    UILaunchImageSize = '{320, 568}'
+                },{ -- iPad Portrait
+                    UILaunchImageMinimumOSVersion = '7.0',
+                    UILaunchImageName = 'Default-Portrait',
+                    UILaunchImageOrientation = 'Portrait',
+                    UILaunchImageSize = '{768, 1024}'
+                },{  --iPhone 6 Portrait
+                    UILaunchImageMinimumOSVersion = '8.0',
+                    UILaunchImageName = 'Default-667h',
+                    UILaunchImageOrientation = 'Portrait',
+                    UILaunchImageSize = '{375, 667}'
+                },{ --iPhone 6 Plus Portrait
+                    UILaunchImageMinimumOSVersion = '8.0',
+                    UILaunchImageName = 'Default-736h',
+                    UILaunchImageOrientation = 'Portrait',
+                    UILaunchImageSize = '{414, 736}'
+                }
+            },
+            UIPrerenderedIcon = true,
+            UIBackgroundModes = {'remote-notification'},
+            UIApplicationExitsOnSuspend = false,
+			FacebookAppID = '1477765329131011',
+			CFBundleURLTypes = {{CFBundleURLSchemes = {'fb1477765329131011'}}}
+        },
+        skipPNGCrush = true
+    },
+    excludeFiles = {
+        iphone = {'Icon-*dpi.png', 'sounds/*.ogg'},
+        all = {'archive/*', '*.keystore'},
+        android = {
+            'Icon.png',
+            'Icon@2x.png',
+            'Icon-Small-40.png',
+            'Icon-Small-40@2x.png',
+            'Icon-60.png',
+            'Icon-60@2x.png',
+            'Icon-60@3x.png',
+            'Icon-72.png',
+            'Icon-72@2x.png',
+            'Icon-76.png',
+            'Icon-76@2x.png',
+            'Icon-Small-50.png',
+            'Icon-Small-50@2x.png',
+            'Icon-Small.png',
+            'Icon-Small@2x.png',
+            'sounds/*.m4a'}
+    }
+}
